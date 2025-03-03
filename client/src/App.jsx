@@ -1,10 +1,10 @@
 
-import Form from "./components/Form";
+import Main from "./components/Main";
 import './App.css'
 
 
 function App() {
-  return <Form />
+  return <Main />
 }
 
 export default App
