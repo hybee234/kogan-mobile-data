@@ -13,7 +13,35 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
+
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+  padding: 15px;
+  color: rgba(180, 140, 240, 1)
+}
+
+h2 {
+  font-size: 1.8em;
+  line-height: 1.1;
+  padding: 0px;
+  color: rgba(150, 140, 220, 1)
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.1;
+  padding: 5px;
+  margin: 10px 0px 0px 0px;
+  color: rgba(120, 140, 180, 1)
+}
+
+
+
+
 
 a {
   font-weight: 500;
@@ -30,11 +58,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
