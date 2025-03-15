@@ -16,6 +16,7 @@
   "main": "client/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cd client && npm run dev"
+    "dev": "cd client && npm run dev",
+    "build": "cd client && vite build"
   }
 }
