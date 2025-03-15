@@ -145,7 +145,7 @@ function Main() {
 
                             <h3 className = "text-2xl p-5 my-3"> To target {users.data} GB by {users.length} days</h3>
 
-                            <p> You can use { Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *20 ) /20 } GB per day </p>
+                            <p> You can use {Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *20 ) /20 } GB per day </p>
                             <p> or { Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *30 *20 ) /20 } GB per 30 days </p>
 
                             {/* You must decrease/can increase your data usage */}
