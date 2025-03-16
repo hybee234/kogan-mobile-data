@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "mobile-usage-root",
   "version": "1.0.0",
   "description": "root",
   "homepage": "https://github.com/hybee234/kogan-mobile-data#readme",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/hybee234/kogan-mobile-data.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Hy Lim",
   "type": "commonjs",
   "main": "client/index.html",
   "scripts": {
