@@ -17,6 +17,7 @@
   "main": "client/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd client && npm i",
     "dev": "cd client && npm run dev",
     "build": "cd client && npm run build"
   },
