@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "mobile-usage",
+  "description": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
