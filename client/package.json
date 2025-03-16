@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": "22.14.0"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
     "dayjs": "^1.11.13",
