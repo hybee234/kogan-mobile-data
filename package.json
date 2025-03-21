@@ -5,14 +5,17 @@
   "license": "ISC",
   "author": "Hy Lim",
   "type": "commonjs",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve dist",
     "install": "cd client && npm i",
     "dev": "cd client && npm run dev",
     "build": "cd client && npm run build"
   },
   "engines": {
     "node": "22.14.0"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
   }
 }
