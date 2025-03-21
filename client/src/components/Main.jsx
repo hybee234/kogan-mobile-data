@@ -32,7 +32,7 @@ function Main() {
 
     const handleInputChange = (e) => {     
         //console.log(e)   
-        const { dataUsed, value } = e.target;
+        const { value } = e.target;
         //console.log (e.target.value)
         return setDataUsed(value) 
     };
@@ -75,12 +75,8 @@ function Main() {
             {/* <p>Hy: {hy}GB</p> */}
             {/* <p>Elaine: {elaine}GB</p> */}
             {/* <p>Elaine's Mum: {elainemum}GB</p> */}
-
-
             {/* <p>Hy Sign up Epoch: {hySignUpEpoch}</p> */}
             {/* <p>Hy Sign up Local: {userPlanStart}</p>  */}
-
-
 
             <div className = "border-2 p-2">
                 <p className="read-the-docs ">
@@ -113,12 +109,12 @@ function Main() {
             {/* You must decrease/can increase your data usage */}
             </div>
 
-        <div className = "flex border-2 border-violet-500 m-2">
+        <div id = "card-container" className = "flex border-2 justify-center border-violet-500 m-2">
                 {                    
                 users.map((users) => {
                     return (
                         
-                        <div className= "border-2 border-amber-200 p-5 m-2" key={users.id}>
+                        <div className= "card border-2 border-amber-200 p-5 m-2" key={users.id}>
                             <h2>{users.name}</h2>
                             <h3> Plan details </h3>
                             <p>Start: {dayjs(users.start).format('DD/MM/YY')}</p>
