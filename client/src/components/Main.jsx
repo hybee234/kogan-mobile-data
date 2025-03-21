@@ -122,8 +122,9 @@ function Main() {
                             <p>Data Remaining <span className="text-green-500 text-2xl">{remainingDataHandler(users.data, dataUsed)}</span> GB ({users.data} GB)</p>                    
 
                             <h3 className = "text-2xl p-5"> Current Use </h3>
-                            <p>Current use rate (30 days)  <span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)*30 * 20) /20 }</span> GB/ 30 days</p>
-                            <p>Current use rate ({users.length} days)  <span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20}</span> GB / {users.length} days</p>
+                            <p><span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)*30 * 20) /20 }</span> GB/ 30 days</p>
+                            <p> OR </p>
+                            <p><span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20}</span> GB / {users.length} days</p>
 
                             {
                                 (Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20) < users.data ? (
