@@ -69,7 +69,7 @@ function Main() {
 
 
     return (
-        <div className = "border-2">
+        <div className = "">
             <h1> Kogan Data Use calculator</h1>
 
             {/* <p>Hy: {hy}GB</p> */}
@@ -78,12 +78,12 @@ function Main() {
             {/* <p>Hy Sign up Epoch: {hySignUpEpoch}</p> */}
             {/* <p>Hy Sign up Local: {userPlanStart}</p>  */}
 
-            <div className = "border-2 p-2">
+            <div className = " p-2">
                 <p className="read-the-docs ">
                     How much data have you used (GB)?
                 </p>
                 <input
-                    className = "border-2 p-1 m-1 bg-gray-900"
+                    className = "border-2 p-1 m-1 w-15 text-center bg-gray-900"
                     value={dataUsed}
                     name="dataUsed"
                     onChange={handleInputChange}
@@ -109,25 +109,21 @@ function Main() {
             {/* You must decrease/can increase your data usage */}
             </div>
 
-        <div id = "card-container" className = "flex border-2 justify-center border-violet-500 m-2">
+        <div id = "card-container" className = "flex justify-center">
                 {                    
                 users.map((users) => {
                     return (
                         
-                        <div className= "card border-2 border-amber-200 p-5 m-2" key={users.id}>
+                        <div className= "card p-5 m-2" key={users.id}>
                             <h2>{users.name}</h2>
                             <h3> Plan details </h3>
                             <p>Start: {dayjs(users.start).format('DD/MM/YY')}</p>
-                            <p>Length: {users.length} days</p>
-                            <p>Data allowance: {users.data} GB </p>   
-
-                            <h3>Current state</h3>
-                            <p>Days elapsed: {elapsedDaysHandler(users.start)} </p>
-                            <p>Remaining Data: {remainingDataHandler(users.data, dataUsed)} GB</p>                    
+                            <p>Elapsed: <span className="text-green-500 text-2xl">{elapsedDaysHandler(users.start)}</span> days ({users.length})</p>                            
+                            <p>Data Remaining <span className="text-green-500 text-2xl">{remainingDataHandler(users.data, dataUsed)}</span> GB ({users.data} GB)</p>                    
 
                             <h3 className = "text-2xl p-5"> Current Use </h3>
-                            <p>Current use rate (30 days)  {Math.round(dataUsed/elapsedDaysHandler(users.start)*30 * 20) /20 } GB/ 30 days</p>
-                            <p>Current use rate ({users.length} days) {Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20} GB / {users.length} days</p>
+                            <p>Current use rate (30 days)  <span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)*30 * 20) /20 }</span> GB/ 30 days</p>
+                            <p>Current use rate ({users.length} days)  <span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20}</span> GB / {users.length} days</p>
 
                             {
                                 (Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20) < users.data ? (
@@ -141,8 +137,8 @@ function Main() {
 
                             <h3 className = "text-2xl p-5 my-3"> To target {users.data} GB by {users.length} days</h3>
 
-                            <p> You can use {Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *20 ) /20 } GB per day </p>
-                            <p> or { Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *30 *20 ) /20 } GB per 30 days </p>
+                            <p> You can use <span className="text-green-500 text-2xl">{Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *20 ) /20 }</span> GB per day </p>
+                            <p> or <span className="text-green-500 text-2xl">{ Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *30 *20 ) /20 }</span> GB per 30 days </p>
 
                             {/* You must decrease/can increase your data usage */}
                         </div>
