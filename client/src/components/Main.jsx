@@ -83,30 +83,14 @@ function Main() {
                     How much data have you used (GB)?
                 </p>
                 <input
-                    className = "border-2 p-1 m-1 w-15 text-center bg-gray-900"
+                    className = "border-2 p-1 m-1 w-25 text-center bg-gray-900"
                     value={dataUsed}
                     name="dataUsed"
                     onChange={handleInputChange}
                     type="numeric"
-                    placeholder="Data used to date"
-                />GB
+                    placeholder="Data used"
+                />
 
-            {/* <p>{remainingData} GB remaining</p> */}
-            {/* <p>Difference Time (milliseconds): {diffTime}</p> */}
-            {/* <p>{remainDays} days remaining</p> */}
-            
-            {/* <h2 className = "text-2xl p-5"> Current Use </h2> */}
-            {/* <p>Current use rate (30 days) {currentUseRate2dec} GB/ 30 days</p> */}
-            {/* <p>Current use rate (365 days) {currentUseRate365} GB / 365 days</p> */}
-
-            {/* This means you will be under/over by x GB */}
-
-            {/* <h2 className = "text-2xl p-5"> To target 145GB by 365 days</h2> */}
-
-            {/* <p> You can use {targetUseRatedaily} GB per day </p> */}
-            {/* <p> You can use {targetUseRate30} GB per 30 days </p> */}
-
-            {/* You must decrease/can increase your data usage */}
             </div>
 
         <div id = "card-container" className = "flex justify-center">
@@ -114,7 +98,7 @@ function Main() {
                 users.map((users) => {
                     return (
                         
-                        <div className= "card p-5 m-2" key={users.id}>
+                        <div className= "card border-2 border-gray-600" key={users.id}>
                             <h2>{users.name}</h2>
                             <h3> Plan details </h3>
                             <p>Start: {dayjs(users.start).format('DD/MM/YY')}</p>
@@ -122,24 +106,30 @@ function Main() {
                             <p>Data Remaining <span className="text-green-500 text-2xl">{remainingDataHandler(users.data, dataUsed)}</span> GB ({users.data} GB)</p>                    
 
                             <h3 className = "text-2xl p-5"> Current Use </h3>
-                            <p><span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)*30 * 20) /20 }</span> GB/ 30 days</p>
-                            <p> OR </p>
-                            <p><span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20}</span> GB / {users.length} days</p>
+
 
                             {
                                 (Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20) < users.data ? (
-                                    <p className = "text-green-500 p-2">Usage pattern within data allowance</p>
-                                ) : (
-                                    <p className = "text-red-500 p-2">Usage pattern will exceed data allowance</p>
+                                    <div>
+                                        <p><span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)*30 * 20) /20 }</span> GB / 30 days</p>
+                                        <p>or <span className="text-green-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20}</span> GB / {users.length} days</p>
+                                        <p className = "text-green-500 p-2">Usage pattern within data allowance</p>
+                                    </div>
+                                ) : (                                    
+                                    <div>
+                                        <p><span className="text-red-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)*30 * 20) /20 }</span> GB / 30 days</p>
+                                        <p>or <span className="text-red-500 text-2xl">{Math.round(dataUsed/elapsedDaysHandler(users.start)* users.length * 20) /20}</span> GB / {users.length} days</p>
+                                        <p className = "text-red-500 p-2">Usage pattern will exceed data allowance</p>
+                                </div>
                                 )
                             }
 
                             {/* This means you will be under/over by x GB */}
 
-                            <h3 className = "text-2xl p-5 my-3"> To target {users.data} GB by {users.length} days</h3>
+                            <h3 className = "text-2xl my-3"> To target {users.data} GB by {users.length} days</h3>
 
-                            <p> You can use <span className="text-green-500 text-2xl">{Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *20 ) /20 }</span> GB per day </p>
-                            <p> or <span className="text-green-500 text-2xl">{ Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *30 *20 ) /20 }</span> GB per 30 days </p>
+                            <p> Use <span className="text-green-500 text-2xl">{Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *20 ) /20 }</span> GB / day </p>
+                            <p> or <span className="text-green-500 text-2xl">{ Math.round((users.data - dataUsed)/(users.length - elapsedDaysHandler(users.start)) *30 *20 ) /20 }</span> GB / 30 days </p>
 
                             {/* You must decrease/can increase your data usage */}
                         </div>
