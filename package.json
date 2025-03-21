@@ -1,20 +1,11 @@
 {
   "name": "mobile-usage",
-  "description": "root",
   "version": "1.0.0",
-  
-  "homepage": "https://github.com/hybee234/kogan-mobile-data#readme",
-  "bugs": {
-    "url": "https://github.com/hybee234/kogan-mobile-data/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hybee234/kogan-mobile-data.git"
-  },
+  "description": "root",
   "license": "ISC",
   "author": "Hy Lim",
   "type": "commonjs",
-  "main": "client/index.html",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "cd client && npm i",
