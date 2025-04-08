@@ -10,7 +10,7 @@
     "start": "serve client/dist",
     "install": "cd client && npm i",
     "dev": "cd client && npm run dev",
-    "build": "cd client && npm run build"
+    "vite": "cd client && npm run build"
   },
   "engines": {
     "node": "22.14.0"
