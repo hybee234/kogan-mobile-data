@@ -2,7 +2,7 @@ import dayjs from 'dayjs'
 import { useState } from 'react'
 
 
-function Main() {
+export default function Main() {
 
     const users = [
         {
@@ -145,4 +145,3 @@ function Main() {
 
 }
 
-export default Main;
