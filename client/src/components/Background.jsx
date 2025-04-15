@@ -1,8 +1,8 @@
-function Background() {
+export default function Background() {
     return (
-        <div className = "bg-image"> 
+        <div className = "bg-image">
         </div>
     );
 }
 
-export default Background;
+
