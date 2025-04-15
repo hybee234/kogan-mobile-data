@@ -14,7 +14,7 @@
     "preview": "cd client && npm run preview"
   },
   "engines": {
-    "node": "22.14.0"
+    "node": "22.x.0"
   },
   "dependencies": {
     "serve": "^14.2.4"
