@@ -69,7 +69,7 @@ function Main() {
 
 
     return (
-        <div className = "">
+        <div className = "border-2">
             <h1> Kogan Data Use calculator</h1>
 
             {/* <p>Hy: {hy}GB</p> */}
