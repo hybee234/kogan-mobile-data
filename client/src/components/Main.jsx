@@ -8,7 +8,7 @@ export default function Main() {
         {
             id: 1,
             name: "Hy",
-            data: 145,
+            data: 150,
             start: "2025-01-05",
             length: 365            
         },
